@@ -46,7 +46,12 @@ string decimaltob(int n, int b2){
 int main(){
     string n; 
     int b1, b2;
-    cin >> n >> b1 >> b2;
+    cout << "Enter Number: ";
+    cin >> n;
+    cout << "Original Base: ";
+    cin >> b1;
+    cout << "Final Base: ";
+    cin >> b2;
     int a = btodecimal(n, b1);
     string b = decimaltob(a, b2);
     cout << "Final Converted Number is " << b;
