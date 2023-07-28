@@ -45,6 +45,24 @@ string decimaltob(int n, int b2){
     return s2;
 }
 
+int validation(string num, int b){
+    for(int i = 0; i < num.size(); i++){
+        int n;
+        if(num[i]>='0' and num[i]<='9'){
+            n = num[i]-'0';
+        }
+        else{
+            n = num[i]-'A'+11;
+        }
+        if(n>b){
+            cout << "Number is not valid for given base.\n";
+            return 0;
+            break;
+        }
+    }
+    return 1;
+}
+
 int main(){
     string n; 
     int b1, b2;
@@ -54,6 +72,9 @@ int main(){
     cin >> b1;
     cout << "Final Base: ";
     cin >> b2;
+    if(validation(n, b1)==0){
+        return 0;
+    }
     int a = btodecimal(n, b1);
     string b = decimaltob(a, b2);
     cout << "Final Converted Number is " << b;
