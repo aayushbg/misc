@@ -54,7 +54,7 @@ int validation(string num, int b){
         else{
             n = num[i]-'A'+11;
         }
-        if(n>b){
+        if(n>=b){
             cout << "Number is not valid for given base.\n";
             return 0;
             break;
